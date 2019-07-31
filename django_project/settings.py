@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
+import dj-database-url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,6 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'c2ug1i76yv^_phs*w9ydc*e00xaieda^61axhs*5c*!-v$=bu1'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,6 +78,9 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 
 # Database
+
+db_from_env = dj_database_url.config()
+DATABASES[‘default’].update(db_from_env)
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
@@ -149,6 +154,5 @@ EMAIL_HOST_USER = 'kirkmanjack11@gmail.com'
 
 EMAIL_HOST_PASS = 'Unilorinpals@1'
 
-django_heroku.settings(locals())
 
 
