@@ -77,9 +77,6 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 
 # Database
-
-db_from_env = dj_database_url.config()
-DATABASES[‘default’].update(db_from_env)
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
