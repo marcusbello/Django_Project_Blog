@@ -148,7 +148,7 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = 'kirkmanjack11@gmail.com'
 
-EMAIL_HOST_PASS = 'Unilorinpals@1'
+EMAIL_HOST_PASS = 'sxbgjanpvfouffal'
 
 
 # Configure Django App for Heroku.
